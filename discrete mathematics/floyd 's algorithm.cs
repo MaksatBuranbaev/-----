@@ -1,6 +1,6 @@
 using System.Globalization;
 
-Console.WriteLine("Введите кол-во сторон:");
+Console.WriteLine("Введите кол-во вершин:");
 int n = int.Parse(Console.ReadLine());
 
 double[,] graphs = new double[n,n];
