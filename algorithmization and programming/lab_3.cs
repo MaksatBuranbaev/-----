@@ -1,10 +1,10 @@
 var myArray = Array.CreateInstance(typeof(int), 5);
 for (int i = myArray.GetLowerBound(0); i <= myArray.GetUpperBound(0); i++)
     myArray.SetValue(i + 1, i);
-void print(string name, Array array) 
-{ 
+void print(string name, Array array)
+{
     Console.WriteLine($"{name}:");
-    foreach(var i in array)
+    foreach (var i in array)
     {
         Console.Write($"{i}  ");
     }
@@ -12,7 +12,7 @@ void print(string name, Array array)
 }
 while (true)
 {
-    Console.WriteLine("Меню \n1.Длина массива \n2.Алгоритм двоичного поиска\n3.Поиск по индексу \n4.Копирование массива \n5.Очищение массива \n6.Изменение размера массива \n7.Изменение порядка элементов на обратный \n8.Сортировка \n9.Создание нового массива \nESC - выход");
+    Console.WriteLine("Меню \n1.Длина массива \n2.Алгоритм двоичного поиска\n3.Поиск по индексу \n4.Копирование массива \n5.Очищение массива \n6.Изменение порядка элементов на обратный \n7.Сортировка \n8.Создание нового массива \nESC - выход");
     ConsoleKeyInfo key;
     key = Console.ReadKey();
     Console.WriteLine();
@@ -27,7 +27,7 @@ while (true)
     }
     else if (key.Key == ConsoleKey.D3)
     {
-        Console.WriteLine("Введите индекс");
+        Console.WriteLine("Введите индекс, максимальный - " + (myArray.Length - 1));
         Console.WriteLine("Полученный элемент - " + myArray.GetValue(int.Parse(Console.ReadLine())));
     }
     else if (key.Key == ConsoleKey.D4)
@@ -46,28 +46,15 @@ while (true)
     }
     else if (key.Key == ConsoleKey.D6)
     {
-        Console.WriteLine("Введите новый размер массива");
-        int[] intArray = new int[5];
-        intArray = (int[])myArray;
-        Array.Resize<int>(ref intArray, int.Parse(Console.ReadLine()));
-        for(int i = 0; i < intArray.Length; i++)
-        {
-            intArray[i] = i + 1;
-        }
-        myArray = intArray;
+        Array.Reverse(myArray);
         print("myArray", myArray);
     }
     else if (key.Key == ConsoleKey.D7)
     {
-        Array.Reverse(myArray);
-        print("myArray", myArray);
-    }
-    else if (key.Key == ConsoleKey.D8)
-    {
         Array.Sort(myArray);
         print("myArray", myArray);
     }
-    else if (key.Key == ConsoleKey.D9)
+    else if (key.Key == ConsoleKey.D8)
     {
         Console.WriteLine("Введите размер массива");
         Array myArray_3 = Array.CreateInstance(typeof(int), int.Parse(Console.ReadLine()));
@@ -79,7 +66,7 @@ while (true)
     {
         break;
     }
-    else 
+    else
     {
         Console.WriteLine("Неизвестная команда");
     }
