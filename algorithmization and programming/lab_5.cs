@@ -1,7 +1,4 @@
-DoubleMod a = IMath.addition;
-DoubleMod b = IMath.subtraction;
-DoubleMod c = IMath.multiplication;
-DoubleMod d = IMath.division;
+DoubleMod operation;
 
 
 while (true)
@@ -10,28 +7,32 @@ while (true)
     string key = Console.ReadLine();
     Console.Clear();
 
-    if(key == "1")
+    if (key == "1")
     {
+        operation = IMath.addition;
         Console.WriteLine("Введите 2 числа");
-        Console.WriteLine(a(double.Parse(Console.ReadLine()), double.Parse(Console.ReadLine())));
+        Console.WriteLine(operation(double.Parse(Console.ReadLine()), double.Parse(Console.ReadLine())));
     }
 
     else if (key == "2")
     {
+        operation = IMath.subtraction;
         Console.WriteLine("Введите 2 числа");
-        Console.WriteLine(b(double.Parse(Console.ReadLine()), double.Parse(Console.ReadLine())));
+        Console.WriteLine(operation(double.Parse(Console.ReadLine()), double.Parse(Console.ReadLine())));
     }
 
     else if (key == "3")
     {
+        operation = IMath.multiplication;
         Console.WriteLine("Введите 2 числа");
-        Console.WriteLine(c(double.Parse(Console.ReadLine()), double.Parse(Console.ReadLine())));
+        Console.WriteLine(operation(double.Parse(Console.ReadLine()), double.Parse(Console.ReadLine())));
     }
 
     else if (key == "4")
     {
+        operation = IMath.division;
         Console.WriteLine("Введите 2 числа");
-        Console.WriteLine(d(double.Parse(Console.ReadLine()), double.Parse(Console.ReadLine())));
+        Console.WriteLine(operation(double.Parse(Console.ReadLine()), double.Parse(Console.ReadLine())));
     }
 
     else
