@@ -35,8 +35,14 @@ while (true)
         Console.WriteLine(operation(double.Parse(Console.ReadLine()), double.Parse(Console.ReadLine())));
     }
 
+    else if(key == "5")
+    {
+        break;
+    }
+    
     else
     {
+        Console.WriteLine("Неизвестаная команда");
         break;
     }
 
